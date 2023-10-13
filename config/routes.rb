@@ -10,5 +10,11 @@ Rails.application.routes.draw do
   post "login" => "sessions#create"
   delete "logout",  to: "sessions#destroy"
 
+  get "comment/:user_id/:post_id/new", to: "comment#new"
+  post "comment/new", to: "comment#create"
+  get "comment/:id/edit", to: "comment#edit"
+  post "comment/:id/update", to: "comment#update"
+  delete "comment/:id", to: "comment#destroy"
+
   resources :posts
 end

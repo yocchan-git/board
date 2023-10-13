@@ -9,8 +9,28 @@
             <h3 class="m-3"><%= link_to(post.title, post_path(post), class: "link") %></h3>
             <p class="ms-3 me-3"><%= post.content %></p>
 
+            <% if comments = Comment.where(post_id: post.id) %>
+                <% comments.each do |comment| %>
+                    <% user = User.find_by(id: comment.user_id) %>
+                    <div class="comment-body">
+                        <div class="comment-content">
+                            <p class="ms-3 me-3"><i class="fa-solid fa-comment"></i> <%= user.name %> : <%= comment.comment %></p>
+                        </div>
+                        <% if current_user.id == comment.user_id %>
+                            <div class="comment-link">
+                                <%= link_to("編集","/comment/#{comment.id}/edit", class: "link ms-4 me-2") %>
+                                <%= link_to("削除","/comment/#{comment.id}", data: { turbo_method: :delete }, class: "link") %>
+                            </div>
+                        <% end %>
+                    </div>
+                <% end %>
+            <% end %>
+
             <% user = User.find_by(id: post.user_id) %>
             <p class="text-end me-3"><%= user.name %></p>
+            <div class="text-end me-3 mb-3">
+                <%= link_to("コメントする", "comment/#{current_user.id}/#{post.id}/new",class: "btn btn-warning") %>
+            </div>
         </div>
     <% end %>
 </div>
