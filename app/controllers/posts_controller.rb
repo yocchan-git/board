@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-    before_action :only_login_user, only: [:edit, :update, :destroy]
+    before_action :post_only_login_user, only: [:edit, :update, :destroy]
     before_action :can_login_user, only: [:new, :create]
 
     def index
