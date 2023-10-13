@@ -12,17 +12,17 @@ header{
     height: 70px;
     width: 100%;
 }
-header a{
+.link{
     text-decoration: none;
     color: rgb(27, 26, 26);
 }
-header a:hover{
+a:hover{
     text-decoration: none;
     color: rgb(86, 15, 15);
 }
 .header-nav nav{
     display: flex;
-    margin-top: 30px;
+    margin-top: 25px;
 }
 .header-nav nav li{
     list-style: none;
@@ -31,10 +31,19 @@ header a:hover{
 
 .header-title{
     float: left;
-    margin-top: 30px;
+    margin-top: 25px;
 }
 .header-nav{
     float: right;
+}
+// フラッシュメッセージ
+.flash-body{
+    background-color: orange;
+    color: white;
+    height: 50px;
+}
+.flash-content{
+    padding-top: 12px;
 }
 
 /* forms */
@@ -52,4 +61,11 @@ input, textarea, select, .uneditable-input {
   
 input {
     height: auto !important;
+}
+// postsの内容
+.posts-list{
+    width: 650px;
+    margin: 0 auto;
+    border: #bbb solid 1px;
+    border-radius: 5px;
 }
