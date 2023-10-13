@@ -28,8 +28,22 @@
 
             <% user = User.find_by(id: post.user_id) %>
             <p class="text-end me-3"><%= user.name %></p>
+
+
             <div class="text-end me-3 mb-3">
-                <%= link_to("コメントする", "comment/#{current_user.id}/#{post.id}/new",class: "btn btn-warning") %>
+                <% likes = Like.where(post_id: post.id).count %>
+                <% if Like.find_by(user_id: current_user.id,post_id: post.id) %>
+                    <%= link_to("/like/#{post.id}/destroy", data: { turbo_method: :delete }) do %>
+                        <i class="fa-solid fa-heart" style="color: #e811a4;"></i>
+                    <% end %>
+                <% else %>
+                    <%= link_to("/like/#{post.id}/create", data: { "turbo-method": :post }) do %>
+                        <i class="fa-regular fa-heart" style="color: #f005dc;"></i>
+                    <% end %>
+                <% end %>
+                <span><%= likes %></span>
+
+                <%= link_to("コメントする", "comment/#{current_user.id}/#{post.id}/new",class: "btn btn-warning ms-3") %>
             </div>
         </div>
     <% end %>

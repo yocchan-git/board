@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  post 'like/:post_id/create', to:"like#create"
+  delete 'like/:post_id/destroy', to:"like#destroy"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

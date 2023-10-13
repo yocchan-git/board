@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
     before_action :post_only_login_user, only: [:edit, :update, :destroy]
-    before_action :can_login_user, only: [:new, :create]
+    before_action :can_login_user, only: [:new, :create, :index, :show]
 
     def index
         @posts = Post.order(created_at: :desc)
