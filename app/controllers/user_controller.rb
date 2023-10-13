@@ -11,7 +11,7 @@ class UserController < ApplicationController
             reset_session
             login @user
             flash[:notice] = "ユーザー登録が成功しました。"
-            redirect_to "/"
+            redirect_to posts_path
         else
             render 'new', status: :unprocessable_entity
         end

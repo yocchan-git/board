@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
             reset_session
             login @user
             flash[:notice] = "ログイン成功"
-            redirect_to "/user/new"
+            redirect_to posts_path
         else
             render 'new', status: :unprocessable_entity
         end
