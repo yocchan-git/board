@@ -3,8 +3,8 @@ class SessionsController < ApplicationController
     end
 
     def create
-        @user = User.find_by(email: params[:email], password: params[:password])
-        if @user
+        @user = User.find_by(email: params[:email])
+        if @user && @user.authenticate(params[:password])
             reset_session
             login @user
             flash[:notice] = "ログイン成功"
