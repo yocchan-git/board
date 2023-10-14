@@ -1,11 +1,11 @@
-<% provide(:title, 'サインアップ') %>
+<% provide(:title, 'ユーザー編集画面') %>
 <div class="container">
     <div class="text-center">
-        <h1>Sign up</h1>
+        <h1>ユーザー編集画面</h1>
     </div>
 
     <div class="form-width">
-        <%= form_with(url: "/user/new", method: "post", multipart: true) do |f| %>
+        <%= form_with(url: "/user/#{@user.id}/update", method: "post", multipart: true) do |f| %>
             <%= render 'shared/error_messages' %>
 
             <%= f.label :name, "名前" %><br>
@@ -13,9 +13,6 @@
 
             <%= f.label :email, "メールアドレス" %><br>
             <%= f.email_field :email, class: 'form-control' %><br><br>
-
-            <%= f.label :password, "パスワード" %><br>
-            <%= f.password_field :password, class: 'form-control' %><br><br>
 
             <%= f.label :image, "プロフィール画像" %><br>
             <%= f.file_field :image, class: 'form-control' %><br><br>

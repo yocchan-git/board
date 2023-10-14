@@ -8,7 +8,7 @@
         <%= form_with(model: @post) do |f| %>
             <%= render 'shared/error_post_messages' %>
 
-            <%= f.label :title, "名前" %><br>
+            <%= f.label :title, "タイトル" %><br>
             <%= f.text_field :title, class: 'form-control' %><br><br>
 
             <%= f.label :content, "内容" %><br>

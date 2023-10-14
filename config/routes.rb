@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   get "user/new" => "user#new"
   post "user/new" => "user#create"
+  get "user/:id" => "user#show"
+  get "user/:id/edit" => "user#edit"
+  post "user/:id/update" => "user#update"
+
   get "login" => "sessions#new"
   post "login" => "sessions#create"
   delete "logout",  to: "sessions#destroy"

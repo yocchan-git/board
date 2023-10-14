@@ -8,7 +8,7 @@
             <nav>
                 <% if logged_in? %>
                     <% login_user = current_user %>
-                    <li><%= login_user.name %></li>
+                    <li><%= link_to(login_user.name,"/user/#{login_user.id}", class: "link") %></li>
                     <li><%= link_to("ログアウト", "/logout", data: { turbo_method: :delete }, class: "link") %></li>
                 <% else %>
                     <li><%= link_to("ログイン", login_path, class: "link") %></li>
