@@ -13,11 +13,6 @@ class UserController < ApplicationController
             reset_session
             login @user
             flash[:notice] = "ユーザー登録が成功しました。"
-            # # 画像があれば画像を上書きする
-            # if params[:image]
-            #     image = params[:image]
-            #     File.binwrite("app/assets/images/#{@user.id}.jpg",image.read)
-            # end
             redirect_to posts_path
         else
             render 'new', status: :unprocessable_entity

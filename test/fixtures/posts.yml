@@ -1,11 +1,9 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+post_one:
+  title: Example Post 1
+  content: This is the content of post 1.
+  user: michael  # ユーザーレコードを参照しています
 
-# This model initially had no columns defined. If you add columns to the
-# model remove the "{}" from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+post_two:
+  title: Example Post 2
+  content: This is the content of post 2.
+  user: michael 
