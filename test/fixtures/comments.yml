@@ -2,10 +2,10 @@
 
 one:
   comment: MyString
-  user: one
-  post: one
+  user: inactive
+  post: post_one
 
 two:
   comment: MyString
-  user: two
-  post: two
+  user: inactive
+  post: post_two

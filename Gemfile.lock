@@ -68,6 +68,7 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
+    ansi (1.5.0)
     autoprefixer-rails (10.4.15.0)
       execjs (~> 2)
     bcrypt (3.1.19)
@@ -123,6 +124,11 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.5)
     minitest (5.20.0)
+    minitest-reporters (1.6.1)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
     msgpack (1.7.2)
     net-imap (0.4.1)
       date
@@ -180,6 +186,7 @@ GEM
     reline (0.3.9)
       io-console (~> 0.5)
     rexml (3.2.6)
+    ruby-progressbar (1.13.0)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -230,6 +237,7 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
+  minitest-reporters
   puma (~> 5.0)
   rails (~> 7.0.8)
   selenium-webdriver

@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
     include SessionsHelper
 
-    # ポストの編集などはログインかつ本人のみ
+    # ポストの編集などはログインかつ投稿した本人のみ
     def post_only_login_user
         if current_user
             @post = Post.find(params[:id])
